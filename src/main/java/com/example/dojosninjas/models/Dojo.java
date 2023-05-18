@@ -15,6 +15,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 //...
 @Entity
@@ -24,6 +25,8 @@ public class Dojo {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
+ 
+ @NotBlank(message="Por favor llena el nombre del dojo")
  private String name;
  @Column(updatable=false)
  @DateTimeFormat(pattern="yyyy-MM-dd")

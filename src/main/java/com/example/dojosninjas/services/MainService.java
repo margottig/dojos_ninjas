@@ -34,5 +34,8 @@ public class MainService {
 	public List<Ninja> todosNinjas(){
 		return ninjaRepo.findAll();
 	}
+	public Dojo encontrarDojo(Long id) {
+		return dojoRepo.findById(id).orElse(null);
+	}
 	
 }

@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Todos los Dojos</title>
+<title>TITULO AQUI</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/main.css">
 <!-- change to match your file/naming structure -->
@@ -21,13 +21,26 @@
 <!-- change to match your file/naming structure -->
 </head>
 <body>
-	<h1>Todos los Dojos</h1>
-	<a href="/dojos/new"> Ir a nuevo dojo</a> |
-		<a href="/ninja/new"> Crear ninjas</a>
-	<div class="container">
-		<c:forEach items="${dojos }" var="dojo">
-			<li> <a href="/dojo/${dojo.id}"> ${dojo.name }</a></li>
-		</c:forEach>
-	</div>
+
+<h1> Bienvenido al Dojo ${dojosyninjas.name}</h1>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age  </th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${ dojosyninjas.ninjas }" var="ninja">
+				<tr>
+					<td>${ ninja.firstName}</td>
+					<td>${ ninja.lastName }</td>
+					<td>${ ninja.age }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+
 </body>
 </html>

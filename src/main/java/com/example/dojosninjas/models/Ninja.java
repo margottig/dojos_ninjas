@@ -15,6 +15,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 //..
 @Entity
@@ -25,12 +27,16 @@ public class Ninja {
  private Long id;
  private String firstName;
  private String lastName;
+ 
+ @NotNull(message="Por favor ingresa un valor")
+@Min(value=18, message="debe ser mayor a 18")
  private int age;
  @Column(updatable=false)
  @DateTimeFormat(pattern="yyyy-MM-dd")
  private Date createdAt;
  @DateTimeFormat(pattern="yyyy-MM-dd")
  private Date updatedAt;
+ 
  @ManyToOne(fetch = FetchType.LAZY)
  @JoinColumn(name="dojo_id")
  private Dojo dojo;
