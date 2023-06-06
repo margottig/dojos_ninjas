@@ -10,3 +10,4 @@ public interface NinjaRepo extends CrudRepository<Ninja, Long>{
 
 	List<Ninja> findAll();
 }
+
